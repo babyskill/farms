@@ -81,11 +81,11 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://defi2027.gitbook.io/gamefinance/',
+        href: 'https://gamefinance.gitbook.io/gamefinance/',
       },
       {
         label: 'Blog',
-        href: '',
+        href: 'https://gamede-finance.medium.com/',
       },
     ],
   },
