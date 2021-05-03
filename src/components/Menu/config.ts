@@ -81,7 +81,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: '',
+        href: 'https://defi2027.gitbook.io/gamefinance/',
       },
       {
         label: 'Blog',
