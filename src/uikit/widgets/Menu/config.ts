@@ -122,10 +122,10 @@ export const socials = [
         label: 'Announce',
         href: 'https://t.me/gamedefinance',
       },
-      // {
-      //   label: 'English',
-      //   href: 'https://t.me/gamefinance',
-      // },
+      {
+        label: 'English',
+        href: 'https://t.me/GameFinancechat',
+      },
       // {
       //   label: "Bahasa Indonesia",
       //   href: "https://t.me/PancakeSwapIndonesia",
