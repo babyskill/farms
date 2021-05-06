@@ -87,6 +87,10 @@ const config: MenuEntry[] = [
         label: 'Blog',
         href: 'https://gamede-finance.medium.com/',
       },
+      {
+        label: 'To-Do',
+        href: 'https://github.com/GameFinance/farms/projects/1'
+      }
     ],
   },
   // {
