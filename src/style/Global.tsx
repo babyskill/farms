@@ -10,10 +10,8 @@ declare module 'styled-components' {
 const GlobalStyle = createGlobalStyle`
 
   * {
-    font-family: 'Freckle Face', cursive;
-    font-family: 'New Tegomin', serif;
-    font-family: 'Press Start 2P', cursive; 
- }
+    font-family: 'Press Start 2P', 'DotGothic16', sans-serif, 'Freckle Face', cursive, 'New Tegomin', serif, cursive;
+  }
   body {
     background-color: ${({ theme }) => theme.colors.background};
 

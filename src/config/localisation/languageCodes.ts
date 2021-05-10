@@ -46,7 +46,7 @@ export const allLanguages = [
   // HU,
   // ID,
   // IT,
-  // JA,
+  JA,
   // KO,
   // PTBR,
   // RO,
