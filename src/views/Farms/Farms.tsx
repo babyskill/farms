@@ -101,9 +101,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h2" color="text" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(10000, 'Deposit Fee will be used to buyback GAME')}
       </Heading>
-      <Heading as="h2" color="primary" mb="50px" style={{ textAlign: 'center' }} size='xl'>
-        <a href="https://bscscan.com/block/countdown/7297068">Count Down is here!!!</a>
-      </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
         <Divider />
