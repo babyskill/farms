@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardBody, Heading, Text } from 'uikit'
 import BigNumber from 'bignumber.js/bignumber'
 import styled from 'styled-components'
-import { getBalanceNumber } from 'utils/formatBalance'
+import { getBalanceNumber, getDisplayBalance } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getCakeAddress } from 'utils/addressHelpers'
@@ -49,15 +49,15 @@ const CakeStats = () => {
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(536, 'Total Minted')}</Text>
-          {totalSupply && <CardValue fontSize="14px" value={getBalanceNumber(totalSupply)} decimals={0} />}
+          { totalSupply && <Text fontSize="14px">{getDisplayBalance(totalSupply, 18, 6)}</Text> }
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(538, 'Total Burned')}</Text>
-          <CardValue fontSize="14px" value={getBalanceNumber(burnedBalance)} decimals={0} />
+          <Text fontSize="14px">{getDisplayBalance(burnedBalance, 18, 6)}</Text>
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(10004, 'Circulating Supply')}</Text>
-          {cakeSupply && <CardValue fontSize="14px" value={cakeSupply} decimals={0} />}
+          {cakeSupply && <Text fontSize="14px">{getDisplayBalance(circSupply,18, 6)}</Text> }
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(540, 'New GAME/block')}</Text>

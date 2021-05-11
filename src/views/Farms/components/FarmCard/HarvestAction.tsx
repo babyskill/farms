@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js'
 import { Button, Flex, Heading } from 'uikit'
 import useI18n from 'hooks/useI18n'
 import { useHarvest } from 'hooks/useHarvest'
-import { getBalanceNumber } from 'utils/formatBalance'
+import { getBalanceNumber, getDisplayBalance } from 'utils/formatBalance'
 import styled from 'styled-components'
 import useStake from '../../../../hooks/useStake'
 
@@ -26,7 +26,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const { onStake } = useStake(pid)
 
   const rawEarningsBalance = getBalanceNumber(earnings)
-  const displayBalance = rawEarningsBalance.toLocaleString()
+  const displayBalance = getDisplayBalance(earnings)
 
   return (
     <Flex mb="8px" justifyContent="space-between" alignItems="center">
