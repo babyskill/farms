@@ -99,6 +99,91 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
+  {
+    pid: 6,
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'WBNB',
+    lpAddresses: {
+      97: '',
+      56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16', // BNB-BUSD LP
+    },
+    tokenSymbol: 'WBNB',
+    tokenAddresses: {
+      97: '',
+      56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
+  {
+    pid: 7,
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'BUSD',
+    lpAddresses: {
+      97: '',
+      56: '0xde5947e8af1c8ce8fb8bc4878c4dbb0b429f493c', // BUSD-GAME LP
+    },
+    tokenSymbol: 'BUSD',
+    tokenAddresses: {
+      97: '',
+      56: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
+  {
+    pid: 8,
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'CAKE',
+    lpAddresses: {
+      97: '',
+      56: '0x804678fa97d91B974ec2af3c843270886528a9E6', // CAKE-BUSD LP
+    },
+    tokenSymbol: 'CAKE',
+    tokenAddresses: {
+      97: '',
+      56: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
+  {
+    pid: 9,
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'SWAMP',
+    lpAddresses: {
+      97: '',
+      56: '0x90946d2f9fB68ecc40ad8Bc0C1cB15D6cCbC4022', // SWAMP-BUSD LP
+    },
+    tokenSymbol: 'SWAMP',
+    tokenAddresses: {
+      97: '',
+      56: '0xc5a49b4cbe004b6fd55b30ba1de6ac360ff9765d',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
+  {
+    pid: 10,
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'ATOM',
+    lpAddresses: {
+      97: '',
+      56: '0xE8e1a7A9A8Cf745cED06147925CA26Fb3941FabE', // ATOM-BUSD LP
+    },
+    tokenSymbol: 'ATOM',
+    tokenAddresses: {
+      97: '',
+      56: '0x0Eb3a705fc54725037CC9e008bDede697f62F335',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
 ]
 
 export default farms

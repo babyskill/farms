@@ -56,7 +56,7 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
           small
           href={
             isTokenOnly
-              ? `https://exchange.pancakeswap.finance/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+              ? `https://exchange.pancakeswap.finance/#/swap?outputCurrency=${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
               : `https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`
           }
         >
