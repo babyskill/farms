@@ -1,5 +1,4 @@
 export default {
-  // cakeって書いてるけどEgg Tokenだったので、一旦GAME Tokenアドレスを指定した
   cake: {
     56: '0xa26E3cF376c4E7872B169fFC96512DcaCe982A1b',
     97: '0x8f865f68C3F81aef6A15A4280D7928C15999a30e',
