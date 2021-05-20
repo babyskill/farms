@@ -6,7 +6,7 @@ export const nftSources: NftSource = {
   [NftType.GAME]: {
     address: {
       56: '0xBE62b6c4d3eD41Ee9602825d9aEc63D5906A49a1',
-      97: '0x1bafDe63eB7ca9a367fe83a814179704158AD284',
+      97: '',
     },
     identifierKey: 'image',
   },
