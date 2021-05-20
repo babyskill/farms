@@ -1,53 +1,59 @@
-import { Nft } from './types'
+import { Nft, NftSource, NftType } from './types'
 
-export const RABBIT_MINTING_FARM_ADDRESS = '0x7c8b60d2b859a38c8B9b5B6CB4565485cb637c7a'
-export const PANCAKE_RABBITS_ADDRESS = '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07'
+export const IPFS_GATEWAY = 'https://gateway.pinata.cloud'
+
+export const nftSources: NftSource = {
+  [NftType.GAME]: {
+    address: {
+      56: '0xBE62b6c4d3eD41Ee9602825d9aEc63D5906A49a1',
+      97: '',
+    },
+    identifierKey: 'image',
+  },
+}
 
 const Nfts: Nft[] = [
   {
-    name: 'Swapsies',
-    description: 'These bunnies love nothing more than swapping pancakes. Especially on BSC.',
-    originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/swapsies.png',
-    previewImage: 'swapsies-preview.png',
-    blurImage: 'swapsies-blur.png',
+    name: 'Red wyvern',
+    description: 'It is a subspecies of the dragon race.\nIn front of its fangs, claws, and flames, humans are nothing more than a piece of paper.',
+    images: {
+      lg: 'red-wyvern-lg.png',
+      md: 'red-wyvern-lg.png',
+      sm: 'red-wyvern-lg.png',
+      ipfs: 'https://gateway.pinata.cloud/ipfs/Qmc8hLitC1DF6cJoctGcgASrHSDeGx99Sy1XzxQRuod18d/red-wyvern.png',
+    },
     sortOrder: 999,
-    bunnyId: 0,
+    identifier: 'red-wyvern',
+    type: NftType.GAME,
+    variationId: 1,
   },
   {
-    name: 'Drizzle',
-    description: "It's raining syrup on this bunny, but he doesn't seem to mind. Can you blame him?",
-    originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/drizzle.png',
-    previewImage: 'drizzle-preview.png',
-    blurImage: 'drizzle-blur.png',
+    name: 'Ruined golem',
+    description: 'They are the guardians of the ruin.\nEven without their guardians, they continue to faithfully guard their lives today.\nIt is a remnant of a civilization that must have been very prosperous.',
+    images: {
+      lg: 'ruined-golem-lg.png',
+      md: 'ruined-golem-lg.png',
+      sm: 'ruined-golem-lg.png',
+      ipfs: 'https://gateway.pinata.cloud/ipfs/Qmc8hLitC1DF6cJoctGcgASrHSDeGx99Sy1XzxQRuod18d/ruined-golem.png',
+    },
     sortOrder: 999,
-    bunnyId: 1,
+    identifier: 'ruined-golem',
+    type: NftType.GAME,
+    variationId: 2,
   },
   {
-    name: 'Blueberries',
-    description: "These bunnies like their pancakes with blueberries. What's your favorite topping?",
-    originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/blueberries.png',
-    previewImage: 'blueberries-preview.png',
-    blurImage: 'blueberries-blur.png',
+    name: 'The graveyard lich',
+    description: 'They were the great mages of ancient times, who materialized their own lives to become immortal in order to reach the truth.',
+    images: {
+      lg: 'the-graveyard-lich-lg.png',
+      md: 'the-graveyard-lich-lg.png',
+      sm: 'the-graveyard-lich-lg.png',
+      ipfs: 'https://gateway.pinata.cloud/ipfs/Qmc8hLitC1DF6cJoctGcgASrHSDeGx99Sy1XzxQRuod18d/the-graveyard-lich.png',
+    },
     sortOrder: 999,
-    bunnyId: 2,
-  },
-  {
-    name: 'Circular',
-    description: "Love makes the world go 'round... but so do pancakes. And these bunnies know it.",
-    originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/circular.png',
-    previewImage: 'circular-preview.png',
-    blurImage: 'circular-blur.png',
-    sortOrder: 999,
-    bunnyId: 3,
-  },
-  {
-    name: 'Sparkle',
-    description: 'It’s sparkling syrup, pancakes, and even lottery tickets! This bunny really loves it.',
-    originalImage: 'https://gateway.pinata.cloud/ipfs/QmXdHqg3nywpNJWDevJQPtkz93vpfoHcZWQovFz2nmtPf5/sparkle.png',
-    previewImage: 'sparkle-preview.png',
-    blurImage: 'sparkle-blur.png',
-    sortOrder: 999,
-    bunnyId: 4,
+    identifier: 'the-graveyard-lich',
+    type: NftType.GAME,
+    variationId: 3,
   },
 ]
 

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Web3 from 'web3'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
 import { Button, Input, Modal, Text } from 'uikit'
-import { PANCAKE_RABBITS_ADDRESS } from 'config/constants/nfts'
+import { getAddressByType } from 'utils/collectibles'
 import { Nft } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
-import { usePancakeRabbits } from 'hooks/useContract'
+import useToast from 'hooks/useToast'
+import { useERC721 } from 'hooks/useContract'
 import InfoRow from './InfoRow'
 
 interface TransferNftModalProps {
@@ -42,8 +43,9 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
   const [value, setValue] = useState('')
   const [error, setError] = useState(null)
   const TranslateString = useI18n()
-  const { account } = useWallet()
-  const pancakeRabbitsContract = usePancakeRabbits(PANCAKE_RABBITS_ADDRESS)
+  const { account }: { account: string } = useWallet()
+  const contract = useERC721(getAddressByType(nft.type))
+  const { toastSuccess } = useToast()
 
   const handleConfirm = async () => {
     try {
@@ -52,7 +54,7 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
       if (!isValidAddress) {
         setError(TranslateString(999, 'Please enter a valid wallet address'))
       } else {
-        await pancakeRabbitsContract.methods
+        await contract.methods
           .transferFrom(account, value, tokenIds[0])
           .send({ from: account })
           .on('sending', () => {
@@ -61,6 +63,7 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
           .on('receipt', () => {
             onDismiss()
             onSuccess()
+            toastSuccess('NFT successfully transferred!')
           })
           .on('error', () => {
             console.error(error)
@@ -103,11 +106,11 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
         />
       </ModalContent>
       <Actions>
-        <Button fullWidth variant="secondary" onClick={onDismiss}>
-          {TranslateString(462, 'Cancel')}
+        <Button variant="secondary" onClick={onDismiss}>
+          {TranslateString(999, 'Cancel')}
         </Button>
-        <Button fullWidth onClick={handleConfirm} disabled={!account || isLoading || !value}>
-          {TranslateString(464, 'Confirm')}
+        <Button onClick={handleConfirm} disabled={!account || isLoading || !value}>
+          {TranslateString(999, 'Confirm')}
         </Button>
       </Actions>
     </Modal>

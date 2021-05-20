@@ -34,6 +34,11 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: '/pools',
   },
+  {
+    label: 'NFT',
+    icon: 'NftIcon',
+    href: '/nft',
+  },
   // {
   //   label: 'Pools',
   //   icon: 'PoolIcon',
@@ -43,11 +48,6 @@ const config: MenuEntry[] = [
   //   label: 'Lottery',
   //   icon: 'TicketIcon',
   //   href: '/lottery',
-  // },
-  // {
-  //   label: 'NFT',
-  //   icon: 'NftIcon',
-  //   href: '/nft',
   // },
   // {
   //   label: 'Info',
