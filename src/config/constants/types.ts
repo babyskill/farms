@@ -75,12 +75,45 @@ export interface PoolConfig {
   tokenDecimals: number
 }
 
+export type Images = {
+  lg: string
+  md: string
+  sm: string
+  ipfs?: string
+}
+
+export type NftImages = {
+  blur?: string
+} & Images
+
+export type NftVideo = {
+  webm: string
+  mp4: string
+}
+
+export type NftSource = {
+  [key in NftType]: {
+    address: Address
+    identifierKey: string
+  }
+}
+
+export enum NftType {
+  GAME = 'game'
+}
+
 export type Nft = {
-  name: string
   description: string
-  originalImage: string
-  previewImage: string
-  blurImage: string
+  name: string
+  images: NftImages
   sortOrder: number
-  bunnyId: number
+  type: NftType
+  video?: NftVideo
+
+  // Uniquely identifies the nft.
+  // Used for matching an NFT from the config with the data from the NFT's tokenURI
+  identifier: string
+
+  // Used to be "monsterId". Used when minting NFT
+  variationId?: number | string
 }

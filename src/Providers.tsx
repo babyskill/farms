@@ -8,6 +8,7 @@ import { LanguageContextProvider } from 'contexts/Localisation/languageContext'
 import { ThemeContextProvider } from 'contexts/ThemeContext'
 import { BlockContextProvider } from 'contexts/BlockContext'
 import { RefreshContextProvider } from 'contexts/RefreshContext'
+import { ToastsProvider } from 'contexts/ToastsContext';
 import store from 'state'
 
 const Providers: React.FC = ({ children }) => {
@@ -15,23 +16,25 @@ const Providers: React.FC = ({ children }) => {
   const chainId = parseInt(process.env.REACT_APP_CHAIN_ID)
   return (
     <Provider store={store}>
-      <ThemeContextProvider>
-        <LanguageContextProvider>
-          <bsc.UseWalletProvider
-            chainId={chainId}
-            connectors={{
-              walletconnect: { rpcUrl },
-              bsc,
-            }}
-          >
-            <BlockContextProvider>
-              <RefreshContextProvider>
-                <ModalProvider>{children}</ModalProvider>
-              </RefreshContextProvider>
-            </BlockContextProvider>
-          </bsc.UseWalletProvider>
-        </LanguageContextProvider>
-      </ThemeContextProvider>
+      <ToastsProvider>
+        <ThemeContextProvider>
+          <LanguageContextProvider>
+            <bsc.UseWalletProvider
+              chainId={chainId}
+              connectors={{
+                walletconnect: { rpcUrl },
+                bsc,
+              }}
+            >
+              <BlockContextProvider>
+                <RefreshContextProvider>
+                  <ModalProvider>{children}</ModalProvider>
+                </RefreshContextProvider>
+              </BlockContextProvider>
+            </bsc.UseWalletProvider>
+          </LanguageContextProvider>
+        </ThemeContextProvider>
+      </ToastsProvider>
     </Provider>
   )
 }

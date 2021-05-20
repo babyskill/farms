@@ -1,10 +1,14 @@
 import BigNumber from 'bignumber.js'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
 import { useEffect, useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useAppDispatch } from 'state'
 import useRefresh from 'hooks/useRefresh'
+import Nfts from 'config/constants/nfts'
 import { fetchFarmsPublicDataAsync, fetchPoolsPublicDataAsync, fetchPoolsUserDataAsync } from './actions'
 import { State, Farm, Pool } from './types'
 import { QuoteToken } from '../config/constants/types'
+import { fetchWalletNfts } from './collectibles'
 
 const ZERO = new BigNumber(0)
 
@@ -103,4 +107,26 @@ export const useTotalValue = (): BigNumber => {
     }
   }
   return value
+}
+
+// Collectibles
+export const useGetCollectibles = () => {
+  const { account }: { account: string } = useWallet()
+  const dispatch = useAppDispatch()
+  const { isInitialized, isLoading, data } = useSelector((state: State) => state.collectibles)
+  const identifiers = Object.keys(data)
+
+  useEffect(() => {
+    // Fetch nfts only if we have not done so already
+    if (!isInitialized) {
+      dispatch(fetchWalletNfts(account))
+    }
+  }, [isInitialized, account, dispatch])
+
+  return {
+    isInitialized,
+    isLoading,
+    tokenIds: data,
+    nftsInWallet: Nfts.filter((nft) => identifiers.includes(nft.identifier)),
+  }
 }

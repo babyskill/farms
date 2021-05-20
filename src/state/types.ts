@@ -39,9 +39,20 @@ export interface PoolsState {
   data: Pool[]
 }
 
+// Collectibles
+
+export interface CollectiblesState {
+  isInitialized: boolean
+  isLoading: boolean
+  data: {
+    [key: string]: number[]
+  }
+}
+
 // Global state
 
 export interface State {
   farms: FarmsState
   pools: PoolsState
+  collectibles: CollectiblesState
 }
