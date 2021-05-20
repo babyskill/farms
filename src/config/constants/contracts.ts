@@ -31,4 +31,8 @@ export default {
     56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
     97: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
   },
+  monsterMintingFarm: {
+    56: '',
+    97: '0xE1F93F5D65a0225E663e83d8268520Ff697863A7',
+  },
 }
